@@ -1,0 +1,9 @@
+// Function Hider ARG
+add_action( 'woocommerce_before_checkout_form', 'hide_arg' );
+function hide_arg() {
+    if ( ! is_user_logged_in() ) {
+    	echo '<style type="text/css">
+        .argmc-tabs-list, .argmc-nav, .argmc-form-steps-wrapper{ display: none !important; }
+    </style>';
+    }
+}
